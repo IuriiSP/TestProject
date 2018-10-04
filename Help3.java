@@ -1,4 +1,4 @@
-public class Help2 {
+public class Help3 {
     public static void main(String[] args)
         throws java.io.IOException {
             char choice, ignore;
@@ -9,15 +9,17 @@ public class Help2 {
                 System.out.println("2. switch");
                 System.out.println("3. for");
                 System.out.println("4. while");
-                System.out.println("5. do-while\n");
-                System.out.println("Выберите: ");
+                System.out.println("5. do-while");
+                System.out.println("6. break");
+                System.out.println("7. continue\n");
+                System.out.println("Выберите (q - выход) : ");
 
                 choice = (char) System.in.read();
 
                 do {
                     ignore = (char) System.in.read();
                     } while (ignore != '\n');
-                 } while (choice < '1' | choice > '5');
+                 } while (choice < '1' | choice > '7' & choice != 'q');
             System.out.println("\n");
 
             switch (choice) {
@@ -37,6 +39,12 @@ public class Help2 {
                     break;
                 case '5':
                     System.out.println("Оператор do-while:\n \n do { \n оператор; \n } while (условие);");
+                    break;
+                case '6':
+                    System.out.println("Оператор break: \n \n break; или break метка;");
+                    break;
+                case '7':
+                    System.out.println("Оператор continue:\n \n continue или continue метка;");
                     break;
 
             }
