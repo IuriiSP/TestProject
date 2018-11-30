@@ -1,4 +1,4 @@
-public class TwoVehicles
+/*public class TwoVehicles
 {
     public static void main (String args [])
     {
@@ -27,3 +27,4 @@ public class TwoVehicles
         System.out.println("Спорткар может перевести " + sportcar.passengers + " пассажиров на расстояние " + range2 + " миль");
     }
 }
+*/
