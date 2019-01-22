@@ -14,15 +14,14 @@ public class Recursion_6
 }
 class Mthd
 {
-    String Mthd (String str2)
+    char Mthd (String str2)
     {
         int a = str2.length() - 1;
-        if (str2.charAt(a) == 0) return str2;
-        else
-        {
-            System.out.print(Mthd(str2));
+        char result = Mthd(str2);
+        if (result == 0) return str2.charAt(a + 1);
+                   System.out.print(Mthd(str2));
             a--;
-        }
-        return str2;
+            return result;
+
     }
 }
