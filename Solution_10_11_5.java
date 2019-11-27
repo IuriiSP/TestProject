@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
+import java.util.*;
 
 /*Ввести с клавиатуры 10 строчек и подсчитать в них количество
 различных букв (для 33 маленьких букв алфавита).
@@ -26,12 +24,30 @@ public class Solution_10_11_5 {
 
         // Ввод строк
         ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             String s = reader.readLine();
             list.add(s.toLowerCase());
         }
 
-        // напишите тут ваш код
+        Map<Character, Integer> result = new LinkedHashMap<>();
+        for (int i = 0; i < alphabet.size(); i++){
+            result.put(alphabet.get(i), 0);
+        }
+
+
+        for (int i = 0; i < list.size(); i++){
+            char[] ch = list.get(i).toCharArray();
+            int count = 0;
+            for (int j = 0; j < ch.length; j++){
+
+                if (alphabet.contains(ch[j])) {//проверить попадание ch[j] в alphabet
+                    count++;
+                    result.put(alphabet.get(ch[j]), count);
+                }
+            }
+        }
+
+        System.out.println(result);
     }
 }
 
