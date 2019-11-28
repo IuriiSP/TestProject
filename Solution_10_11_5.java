@@ -24,30 +24,31 @@ public class Solution_10_11_5 {
 
         // Ввод строк
         ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 10; i++) {
             String s = reader.readLine();
             list.add(s.toLowerCase());
         }
 
+        // напишите тут ваш код
         Map<Character, Integer> result = new LinkedHashMap<>();
-        for (int i = 0; i < alphabet.size(); i++){
-            result.put(alphabet.get(i), 0);
+        for(Character character : alphabet) {
+            result.put(character, 0);
         }
+        for (String s : list) {
+            char[] charactersLine = s.toCharArray();
+            for (char character : charactersLine) {
+//проверить наличие символа в алфавите
+                if (alphabet.contains(character)) {
+//смотрим в нашу мапу, сколько раз уже встречались, если 0, т.е. ни разу, то кладем 1, если уже было,
+//то увеличиваем на 1
+                    Integer integer = result.get(character);
+                    result.put(character, integer == 0 ? 1 : integer + 1);
 
-
-        for (int i = 0; i < list.size(); i++){
-            char[] ch = list.get(i).toCharArray();
-            int count = 0;
-            for (int j = 0; j < ch.length; j++){
-
-                if (alphabet.contains(ch[j])) {//проверить попадание ch[j] в alphabet
-                    count++;
-                    result.put(alphabet.get(ch[j]), count);
                 }
             }
         }
 
-        System.out.println(result);
+        result.forEach((character, integer) -> System.out.println(character + " " + integer));
     }
 }
 
