@@ -4,7 +4,14 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/*
+Считать с консоли URL-ссылку.
+Вывести на экран через пробел список всех параметров (Параметры идут после ? и разделяются &, например, lvl=15).
+Воод:
+http://javarush.ru/alpha/index.html?lvl=15&view&name=Amigo
+Вывод:
+lvl view name
+*/
 public class Soluttion_15_12_9 {
     public static void main(String[] args) throws IOException {
 
